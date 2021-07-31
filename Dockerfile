@@ -1,4 +1,4 @@
-internetsystemsconsortium/bind9:9.11
+FROM internetsystemsconsortium/bind9:9.11
 MAINTAINER BIND 9 Developers <bind9-dev@isc.org>
 
 ENV DEBIAN_FRONTEND noninteractive
