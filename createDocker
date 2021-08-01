@@ -10,5 +10,5 @@ docker run --detach \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
-	--hostname ${1:?"You must supply the hostname for the container"} \
+        --hostname ${1:?"You must supply the hostname for the container"} \
         marioja/bind9:webmin
