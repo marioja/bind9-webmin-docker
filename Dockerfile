@@ -11,4 +11,5 @@ RUN wget -q http://www.webmin.com/jcameron-key.asc -O- | apt-key add -
 RUN add-apt-repository -y "deb [arch=amd64] http://download.webmin.com/download/repository sarge contrib"
 RUN apt-get -qqqy install webmin
 EXPOSE 10000/tcp
-CMD systemctl start webmin
+CMD ["/usr/sbin/init"]
+CMD ["systemctl", "start", "webmin"]
