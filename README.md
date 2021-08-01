@@ -4,7 +4,9 @@ to figure out how to start the webmin interface.  I then modified the CMD to inv
 
 This is much simpler than fffaraz/docker-bind-webmin as it uses the bind9-docker as the basis and justs adds the webmin to it.
 ## Build the container
-You can build the docker image in your local repo or use the one I have on hub.docker.com.
+You can build the docker image in your local repo or use the one I have on docker.com
+
+```docker pull marioja/bind9:webmin```
 
 To build it yourself simply change your directory to the directory containing the Dockerfile where you clone this repo and issue this command:
 
