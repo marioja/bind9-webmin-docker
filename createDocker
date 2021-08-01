@@ -10,4 +10,4 @@ docker run --detach \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
-        bind9:webmin
+        marioja/bind9:webmin
