@@ -12,4 +12,3 @@ RUN add-apt-repository -y "deb [arch=amd64] http://download.webmin.com/download/
 RUN apt-get -qqqy install webmin
 EXPOSE 10000/tcp
 CMD ["/usr/sbin/init"]
-CMD ["systemctl", "start", "webmin"]
