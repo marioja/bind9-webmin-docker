@@ -1,6 +1,0 @@
-#!/usr/bin/bash
-docker network create -d macvlan \
-	--subnet 10.0.0.0/24 \
-	--gateway 10.0.0.2 \
-	--ip-range 10.0.0.248/29 \
-	-o parent=eth0 mfjlan_containers
