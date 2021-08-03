@@ -1,15 +1,23 @@
 #!/usr/bin/bash
-docker run --detach \
-        --name=bind9${6:-} \
-        --restart=always \
-        --publish ${2:-53}:53/udp \
+set +xv
+publish="--publish ${2:-53}:53/udp \
         --publish ${2:-53}:53/tcp \
         --publish ${3:-10000}:10000/tcp \
-        --publish 127.0.0.1:${4:-953}:953/tcp \
+        --publish 127.0.0.1:${4:-953}:953/tcp"
+network=${6:-bridge}
+if [ $network != "bridge" ]
+then
+  publish=""
+fi
+docker run --detach \
+        --name=bind9${7:-} \
+        --restart=always \
+	$publish \
+	--network ${network} \
         --volume /etc/bind \
         --volume /var/cache/bind \
         --volume /var/lib/bind \
         --volume /var/log \
         --hostname ${1:?"You must supply the hostname for the container.
-The following args are optional: <host-dns-listen> <host-gui> <host-publish> <image-name> <name-suffix>"} \
+The following args are optional: <host-dns-listen> <host-gui> <host-publish> <image-name> <network> <name-suffix>"} \
         ${5:-marioja/bind9:webmin}
